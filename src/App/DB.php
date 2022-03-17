@@ -13,7 +13,7 @@ class DB
 
     private final function __construct()
     {
-
+    $this->db = new SQLite3(__DIR__ . '/../../admin/my.db');
     }
 
     public static function getInstance(): DB
