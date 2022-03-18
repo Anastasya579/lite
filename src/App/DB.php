@@ -13,15 +13,15 @@ class DB
 
     private final function __construct()
     {
-  
+        $this->db = new SQLite3('sqlites.db');
     }
 
     public static function getInstance(): DB
     {
-        if (is_null(self::$instance)) {
-            self::$instance = new self();
-        }
-        return self::$instance;
+       if (is_null(self::$instance)) {
+     self::$instance = new self();
+     }
+     return self::$instance;
     }
 
     public function test(): void
@@ -34,3 +34,4 @@ class DB
         return $this->db;
     }
 }
+?>
